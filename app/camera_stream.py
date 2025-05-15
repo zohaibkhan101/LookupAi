@@ -1,11 +1,11 @@
 # camera_stream.py
 import cv2
 import threading
-from ai_core import detect_objects
+from .ai_core import detect_objects
 
 class CameraStream:
     def __init__(self, camera_id=0, frame_skip=15):
-        self.cap = cv2.VideoCapture(camera_id)
+        self.cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
         self.current_frame = None
         self.labels = []
         self.frame_skip = frame_skip
